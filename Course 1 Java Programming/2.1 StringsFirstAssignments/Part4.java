@@ -12,7 +12,7 @@ import edu.duke.*;
 public class Part4 {
     
     public void findWebLinks(){    
-        String link = "https://www.dukelearntoprogram.com//course2/data/manylinks.html";
+        String link = "http://www.dukelearntoprogram.com/course2/data/manylinks.html";
         URLResource ur = new URLResource(link);
         String target = "youtube.com";
         String quotation = "\"";

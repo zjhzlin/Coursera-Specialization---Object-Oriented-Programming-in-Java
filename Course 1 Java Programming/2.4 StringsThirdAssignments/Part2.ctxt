@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Part2
+comment0.text=\n\ Part2\:\n\ calculate\ CG\ ratio\ in\ dna\n\ -\ int\ to\ double,\ and\ /\ caculation\ between\ int\ and\ double\n\ \n\ @author\ Lynn\ Zhang\ \ \ \n\ @version\ 2021-04-09\ 06\:48\ -\ 07\:04\n
+comment1.params=stringa\ stringb
+comment1.target=int\ howMany(java.lang.String,\ java.lang.String)
+comment2.params=dna
+comment2.target=double\ cgRatio(java.lang.String)
+comment3.params=dna
+comment3.target=int\ countCTG(java.lang.String)
+comment4.params=
+comment4.target=void\ testCountCTG()
+comment5.params=
+comment5.target=void\ testCgRatio()
+numComments=6
