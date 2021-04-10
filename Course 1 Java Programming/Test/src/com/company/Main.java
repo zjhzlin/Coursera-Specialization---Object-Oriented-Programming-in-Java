@@ -1,6 +1,11 @@
 package com.company;
 
+
+
 public class Main {
+
+
+
 
     public static void main(String[] args) {
 	// write your code here
@@ -25,9 +30,22 @@ public class Main {
         String humid = "N/A";
         flag = (humid!="N/A");
         System.out.println(flag);
-        int intValue = Integer.parseInt(humid);
-        System.out.println(intValue);
+        //int intValue = Integer.parseInt(humid);
+        //System.out.println(intValue);
 
-
+//        int N = 3;
+        int N = 24;
+        if(N%2 == 1) {
+            System.out.println("Weird");
+        }
+        else if (N%2 == 0 && N<=5 && N>=2){
+            System.out.println("Not Weird");
+        }
+        else if (N%2 == 0 && N<=20 && N>=6) {
+            System.out.println("Weird");
+        }
+        else {
+            System.out.println("Not Weird");
+        }
     }
 }
