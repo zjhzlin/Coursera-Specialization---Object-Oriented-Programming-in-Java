@@ -80,8 +80,10 @@ public class Part1 {
     }
     
     public void printAllTemp(String filename){
+        // only to print 2013 for now - need to update
+        int year = 2013;
         System.out.println("All the temperatures on the coldest day were: ");
-        String f = "nc_weather/2014/" + filename;
+        String f = "nc_weather/" + year + "/" + filename;
         FileResource fr = new FileResource(f);
         CSVParser csv = fr.getCSVParser();
         for (CSVRecord row: csv){
@@ -122,9 +124,7 @@ public class Part1 {
         printAllTemp(fileColdest);
         return coldestSoFar;
     }
-    
-   
-    
+        
     public void TestFileWithColdestTemperature(){
         CSVRecord coldest = fileWithColdestTemperature();
         System.out.println("Coldest temp on that day was " + coldest.get("TemperatureF") 
@@ -146,7 +146,7 @@ public class Part1 {
     }
     
     public void testLowestHumidityInFile(){
-        FileResource fr = new FileResource("nc_weather/2014/weather-2014-04-01.csv");
+        FileResource fr = new FileResource("nc_weather/2014/weather-2014-07-22.csv");
         CSVParser parser = fr.getCSVParser();
         CSVRecord csv = lowestHumidityInFile(parser);               
         System.out.println("Lowest Humidity was " + csv.get("Humidity") 
@@ -196,7 +196,7 @@ public class Part1 {
     }
     
     public void testAverageTemperatureFile(){
-        FileResource fr = new FileResource("nc_weather/2014/weather-2014-06-01.csv");
+        FileResource fr = new FileResource("nc_weather/2013/weather-2013-08-10.csv");
         CSVParser csv = fr.getCSVParser();
         
         double avgTemp = averageTemperatureFile(csv);
@@ -232,7 +232,7 @@ public class Part1 {
     }
     
     public void testAverageTemperatureWithHighHumidityInFile(){
-        FileResource fr = new FileResource("nc_weather/2014/weather-2014-03-30.csv");
+        FileResource fr = new FileResource("nc_weather/2013/weather-2013-09-02.csv");
         CSVParser csv = fr.getCSVParser();
         
         double avgTemp = averageTemperatureWithHighHumidityInFile(csv, 80);
