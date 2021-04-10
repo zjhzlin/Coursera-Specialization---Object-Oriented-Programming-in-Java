@@ -1,9 +1,10 @@
 ------------------------------------------------------------------------
-Coursera Course: Have Programming: Solving Problems with Software
+Coursera Course: Java Programming: Solving Problems with Software
+Link: https://www.coursera.org/learn/java-programming/home/welcome
 ------------------------------------------------------------------------
 
 
-VERSION or DATE: 07/04/2021 - 10/04/2021
+DATE: 07/04/2021 - 10/04/2021
 AUTHORS: Lynn Zhang
 
 
