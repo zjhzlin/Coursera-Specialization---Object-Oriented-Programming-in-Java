@@ -6,7 +6,7 @@ Link: https://www.coursera.org/learn/java-programming/home/welcome
 
 DATE: 07/04/2021 - 10/04/2021
 AUTHORS: Lynn Zhang
-
+Grade Achieved: 100.00%
 
 What I have learned
 
