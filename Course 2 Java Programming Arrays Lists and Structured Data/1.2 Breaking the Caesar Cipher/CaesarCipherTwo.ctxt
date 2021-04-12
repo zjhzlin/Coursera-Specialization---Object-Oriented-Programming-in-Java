@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=CaesarCipherTwo
+comment0.text=\n\ CaesarCipher\ Two\n\ a\ proper\ CaesarCipher\ class\ with\ two\ keys\ in\ object\ oriented\ programming\n\ -\ add\ a\ decrypt\ method\ to\ decrypt\ with\ the\ same\ key\ \n\ \n\ @Lynn\ Zhang\n\ @version\ 2021-04-12\ 07\:19\ -\ 07\:40\n
+comment1.params=key1\ key2
+comment1.target=CaesarCipherTwo(int,\ int)
+comment2.params=input
+comment2.target=java.lang.String\ encrypt(java.lang.String)
+comment3.params=input
+comment3.target=java.lang.String\ decrypt(java.lang.String)
+comment4.params=ch\ shiftedA
+comment4.target=char\ encryptChar(char,\ java.lang.String)
+numComments=5

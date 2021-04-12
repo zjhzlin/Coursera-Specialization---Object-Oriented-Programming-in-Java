@@ -27,12 +27,15 @@ public class WordLengths {
                 lengthWord = word.length();
             }
             else if (flag1 || flag2) {     // one of them is not letter
-                lengthWord -= 1;
+                lengthWord -= 1;               
             }
             else {  // neither of them are letters 
                 lengthWord -= 2;
             }
             System.out.println("Length word: "+ lengthWord);
+            if (lengthWord < 0) {
+                lengthWord = 0;
+            }
             counts[lengthWord] += 1;     
         } 
         //System.out.println(counts);
