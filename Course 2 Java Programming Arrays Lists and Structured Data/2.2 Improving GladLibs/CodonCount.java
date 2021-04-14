@@ -64,8 +64,8 @@ public class CodonCount {
         String dna = fr.asString();
         //String dna = "CGTTCAAGTTCAA";
         dna = dna.toUpperCase().trim();
-        int pIdxStart = 1;
-        int pIdxEnd = 5;
+        int pIdxStart = 7;
+        int pIdxEnd = ;
         System.out.println("DNA is: " + dna);
         System.out.println("Length is: " + dna.length());
         for (int start = 0; start < 3; start++) {
