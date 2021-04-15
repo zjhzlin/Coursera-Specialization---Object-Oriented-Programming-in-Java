@@ -53,20 +53,20 @@ public class TestCaesarCipherO {
     }
     
     public void SimpleTests() {
-       //FileResource fr = new FileResource();        
-       //String message = fr.asString();  
-       String message = "Can you imagine life WITHOUT the internet AND computers in your pocket?";
+       FileResource fr = new FileResource();        
+       String message = fr.asString();  
+       //String message = "Can you imagine life WITHOUT the internet AND computers in your pocket?";
        System.out.println("Message is: " + message);
        
        // encrypt
-       int key = 15;
+       int key = 2;
        CaesarCipherO cc = new CaesarCipherO(key);
        String encrypted = cc.encrypt(message);
        System.out.println("Encrypted message with key" + key + " is: " + encrypted);
        
        // decrypt
-       //String decrypted = cc.decrypt(encrypted);
-       //System.out.println("Decrypted message is: " + decrypted);
+       String decrypted = cc.decrypt(encrypted);
+       System.out.println("Decrypted message is: " + decrypted);
        
        //breakCaesarCipher(encrypted);
                    
