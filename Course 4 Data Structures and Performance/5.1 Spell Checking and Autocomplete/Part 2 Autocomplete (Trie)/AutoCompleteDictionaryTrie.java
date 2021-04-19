@@ -111,7 +111,12 @@ public class AutoCompleteDictionaryTrie implements  Dictionary, AutoComplete {
 				return false;
 			}
 		}
-		return true;
+		if(currNode.endsWord()) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	/** 
