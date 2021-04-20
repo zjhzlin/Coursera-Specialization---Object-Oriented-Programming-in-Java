@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author UC San Diego Intermediate MOOC team
  *	Lynn ZHANG
- *	2021-04-20 08:30 
+ *	2021-04-20 08:30 - 09:30 
  */
 public class NearbyWords implements SpellingSuggest {
 	// THRESHOLD to determine how many words to look through when looking
@@ -133,6 +133,7 @@ public class NearbyWords implements SpellingSuggest {
 		List<String> retList = new LinkedList<String>();   // words to return
 		boolean wordsOnly = true;						   // needs to be a real word or not
 		
+		
 		// insert first node
 		queue.add(word);
 		visited.add(word);
@@ -167,8 +168,7 @@ public class NearbyWords implements SpellingSuggest {
 				}
 			
 			}
-		}
-				
+		}				
 		return retList;
 
 	}	
@@ -189,6 +189,10 @@ public class NearbyWords implements SpellingSuggest {
 	   System.out.println("Spelling Suggestions for \""+word+"\" are:");
 	   System.out.println(suggest);
 	   
+	   word = "kangaro";
+	   suggest = w.suggestions(word, 10);
+	   System.out.println("Spelling Suggestions for \""+word+"\" are:");
+	   System.out.println(suggest);
    }
 
 }
