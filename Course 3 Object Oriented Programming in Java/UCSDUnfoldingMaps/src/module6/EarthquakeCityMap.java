@@ -21,8 +21,11 @@ import processing.core.PApplet;
 /** EarthquakeCityMap
  * An application with an interactive map displaying earthquake data.
  * Author: UC San Diego Intermediate Software Development MOOC team
- * @author Your name here
  * Date: July 17, 2015
+ * 
+ * @author Lynn Zhang
+ * 2021-04-24 09:45 - 10:05
+ * 
  * */
 public class EarthquakeCityMap extends PApplet {
 	
@@ -124,6 +127,8 @@ public class EarthquakeCityMap extends PApplet {
 	    map.addMarkers(quakeMarkers);
 	    map.addMarkers(cityMarkers);
 	    
+	    int numToPrint = 20;
+	    sortAndPrint(numToPrint);
 	    
 	}  // End setup
 	
@@ -136,9 +141,27 @@ public class EarthquakeCityMap extends PApplet {
 	}
 	
 	
-	// TODO: Add the method:
-	//   private void sortAndPrint(int numToPrint)
+	// TODO: Add the method:	
 	// and then call that method from setUp
+	/** Sort the earthquakes in descending order and print out numToPrint markers 
+	 */
+	private void sortAndPrint(int numToPrint) {
+		
+		// create a new array form the list of earthquake markers - use List.toArray()
+		Object[] qArray = quakeMarkers.toArray();
+		Arrays.sort(qArray);
+		// sort the array of earthquake markers in reverse order of their magnitude (highest to lowest)
+		// print out top numToPrint earthquakes
+		// if numToPrint > num of markers, print out all and stop. should not crash
+		int numQ = qArray.length;
+		int i = 0;
+		while (i < numToPrint && i < numQ){
+			EarthquakeMarker em = (EarthquakeMarker) qArray[i];
+			System.out.println(em.getTitle() + ", MAGNITUDE IS: " +  em.getMagnitude());
+			i+=1;
+		}
+				
+	}
 	
 	/** Event handler that gets called automatically when the 
 	 * mouse moves.

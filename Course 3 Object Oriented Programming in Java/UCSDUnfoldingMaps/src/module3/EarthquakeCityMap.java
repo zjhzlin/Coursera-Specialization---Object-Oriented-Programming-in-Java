@@ -24,8 +24,12 @@ import parsing.ParseFeed;
 /** EarthquakeCityMap
  * An application with an interactive map displaying earthquake data.
  * Author: UC San Diego Intermediate Software Development MOOC team
- * @author Your name here
  * Date: July 17, 2015
+ * 
+ * @author Lynn Zhang
+ * 2021-04-22 09:03 - 09:25
+ * 22:25 - 22:45
+ * 
  * */
 public class EarthquakeCityMap extends PApplet {
 
@@ -33,7 +37,7 @@ public class EarthquakeCityMap extends PApplet {
 	private static final long serialVersionUID = 1L;
 
 	// IF YOU ARE WORKING OFFLINE, change the value of this variable to true
-	private static final boolean offline = false;
+	private static final boolean offline = true;
 	
 	// Less than this threshold is a light earthquake
 	public static final float THRESHOLD_MODERATE = 5;
@@ -77,6 +81,10 @@ public class EarthquakeCityMap extends PApplet {
 	    // to create a new SimplePointMarker for each PointFeature in 
 	    // earthquakes.  Then add each new SimplePointMarker to the 
 	    // List markers (so that it will be added to the map in the line below)
+	    for (PointFeature eq: earthquakes) {
+	    	SimplePointMarker m = createMarker(eq);
+	    	markers.add(m);
+	    }
 	    
 	    
 	    // Add the markers to the map so that they are displayed
@@ -107,7 +115,9 @@ public class EarthquakeCityMap extends PApplet {
 		
 		// Here is an example of how to use Processing's color method to generate 
 	    // an int that represents the color yellow.  
-	    int yellow = color(255, 255, 0);
+	    int yellow = color(255, 255, 0); //medium
+	    int red = color(255, 0, 0); // large
+	    int blue = color(0, 0, 255); // small
 		
 		// TODO (Step 4): Add code below to style the marker's size and color 
 	    // according to the magnitude of the earthquake.  
@@ -116,6 +126,19 @@ public class EarthquakeCityMap extends PApplet {
 	    // Rather than comparing the magnitude to a number directly, compare 
 	    // the magnitude to these variables (and change their value in the code 
 	    // above if you want to change what you mean by "moderate" and "light")
+	    if(mag < THRESHOLD_LIGHT) {
+	    	marker.setColor(blue);
+	    	marker.setRadius(3);
+	    }
+	    else if(mag >= THRESHOLD_LIGHT && mag < THRESHOLD_MODERATE) {
+	    	marker.setColor(yellow);
+	    	marker.setRadius(7);
+	    }
+	    else {
+	    	marker.setColor(red);
+	    	marker.setRadius(10);
+	    }
+	    
 	    
 	    
 	    // Finally return the marker
@@ -133,7 +156,38 @@ public class EarthquakeCityMap extends PApplet {
 	// TODO: Implement this method to draw the key
 	private void addKey() 
 	{	
+		int tS = 10; // textSize
 		// Remember you can use Processing's graphics methods here
+		fill(255,255,255);
+		rect(30,50,140,250);
+		
+		fill(0, 0, 0);
+		textSize(tS);
+		text("Earthquake Key", 50, 80);
+		
+		// red
+		fill(255, 0, 0);
+		ellipse(50, 100, 10, 10);
+		fill(0, 0, 0);
+		textSize(tS);
+		text("5.0+ Magnitude", 70, 100);
+		
+		// yellow
+		fill(255, 255, 0);
+		ellipse(50, 150, 7, 7);
+		
+		fill(0, 0, 0);
+		textSize(tS);
+		text("4.0+ Magnitude", 70, 150);
+		
+		
+		// blue
+		fill(0, 0, 255);
+		ellipse(50, 200, 3, 3);
+		fill(0, 0, 0);
+		textSize(tS);
+		text("Below 4.0", 70, 200);
+		
 	
 	}
 }

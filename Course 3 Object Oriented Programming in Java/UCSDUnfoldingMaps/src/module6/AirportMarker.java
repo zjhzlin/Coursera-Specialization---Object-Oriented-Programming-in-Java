@@ -5,6 +5,7 @@ import java.util.List;
 import de.fhpotsdam.unfolding.data.Feature;
 import de.fhpotsdam.unfolding.data.PointFeature;
 import de.fhpotsdam.unfolding.marker.SimpleLinesMarker;
+import processing.core.PConstants;
 import processing.core.PGraphics;
 
 /** 
@@ -12,6 +13,8 @@ import processing.core.PGraphics;
  *   
  * @author Adam Setters and the UC San Diego Intermediate Software Development
  * MOOC team
+ * @author Lynn Zhang
+ * 2021-04-24
  *
  */
 public class AirportMarker extends CommonMarker {
@@ -35,6 +38,24 @@ public class AirportMarker extends CommonMarker {
 		 // show rectangle with title
 		
 		// show routes
+		
+		String[] titles = ((String) this.getProperty("name")).split("\"");
+		String title = titles[1];
+		
+		pg.pushStyle();
+		
+		pg.rectMode(PConstants.CORNER);
+		
+		pg.stroke(110);
+		pg.fill(255,255,255);
+		pg.rect(x, y + 15, pg.textWidth(title) +6, 18, 5);
+		
+		pg.textAlign(PConstants.LEFT, PConstants.TOP);
+		pg.fill(0);
+		pg.text(title, x + 3 , y +18);
+		
+		
+		pg.popStyle();
 		
 		
 	}
